@@ -1,0 +1,40 @@
+---
+import Social from "./Social.astro";
+
+const links = [
+    {
+        label: "GitHub",
+        href: "https://github.com/tecet1",
+    },
+    {
+        label: "Kaggle",
+        href: "https://www.kaggle.com/tecet1111",
+    },
+    {
+        label: "Notion",
+        href: "https://www.notion.so/DA-c398c68c04398264a35381c6a4c8ae2d",
+    },
+];
+---
+
+<style>
+    footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+</style>
+
+<footer>
+    <p>
+        Learn more about my projects on{" "}
+        {
+            links.map((link, index) => (
+                <>
+                    <Social label={link.label} href={link.href} />
+                    {index < links.length - 1 ? ", " : "."}
+                </>
+            ))
+        }
+    </p>
+</footer>
